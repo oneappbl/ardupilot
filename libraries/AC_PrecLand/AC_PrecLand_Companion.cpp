@@ -69,4 +69,14 @@ void AC_PrecLand_Companion::handle_msg(mavlink_message_t* msg)
 
     _los_meas_time_ms = AP_HAL::millis();
     _have_los_meas = true;
+
+    std::cout << std::endl << "[DEBUG] : mavlink msg received in AC_PrecLand_Companion.cpp" << std::endl;
+    std::cout << "[DEBUG] : packet.time_usec : " << packet.time_usec << std::endl;
+    std::cout << "[DEBUG] : packet.distance : " << packet.distance << std::endl;
+    std::cout << "[DEBUG] : packet.angle_x : " << packet.angle_x << std::endl;
+    std::cout << "[DEBUG] : packet.angle_y : " << packet.angle_y << std::endl;
+    std::cout << "[DEBUG] : packet.size_x : " << packet.size_x << std::endl;
+    std::cout << "[DEBUG] : packet.size_y : " << packet.size_y << std::endl;
+    std::cout << "[DEBUG] : packet.target_num : " << packet.target_num << std::endl;
+    //std::cout << "[DEBUG] : packet.frame : " << packet.frame << std::endl;
 }

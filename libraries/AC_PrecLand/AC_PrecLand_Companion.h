@@ -1,5 +1,6 @@
 #pragma once
 
+#include <iostream>
 #include <AP_Common/AP_Common.h>
 #include <AP_Math/AP_Math.h>
 #include "AC_PrecLand_Backend.h"

@@ -608,6 +608,9 @@ void GCS_MAVLINK_Copter::handleMessage(mavlink_message_t* msg)
 {
     MAV_RESULT result = MAV_RESULT_FAILED;         // assume failure.  Each messages id is responsible for return ACK or NAK if required
 
+    //for(int i=0; i<20 ; i++)
+    //std::cout << "[DEBUG] : i : " << i << " ,msg->msgid : " << msg->msgid << std::endl;
+
     switch (msg->msgid) {
 
     case MAVLINK_MSG_ID_HEARTBEAT:      // MAV ID: 0
@@ -1511,6 +1514,7 @@ void GCS_MAVLINK_Copter::handleMessage(mavlink_message_t* msg)
 
 #if PRECISION_LANDING == ENABLED
     case MAVLINK_MSG_ID_LANDING_TARGET:
+        std::cout << "[DEBUG] : land target msg received : " << std::endl;
         result = MAV_RESULT_ACCEPTED;
         copter.precland.handle_msg(msg);
         break;
